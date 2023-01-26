@@ -9,6 +9,10 @@ export default {
       show: false
     }
   },
+  Form1(){
+    this.width
+
+  },
   computed: {
     calculateSpace(){
       return this.width * this.height
@@ -16,10 +20,6 @@ export default {
     calculateMoculoba(){
       return this.calculateSpace * this.simagle
     },
-    calculateForm1(){
-      return this.calculateSpace
-
-    }
   }
 }
 
@@ -46,9 +46,9 @@ export default {
     <p v-if="show">ფართობი: {{ calculateSpace }}</p>
     <p v-if="show">მოცულობა: {{ calculateMoculoba }}</p>
   </div>
-
-  <div class="Form1">
+   
+  <div class="Form1" height="0px" lengh="0px"></div>
     
-  </div>
+  
 </template>
  
