@@ -72,3 +72,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.Form1{
+  
+  border-color: #222222;
+  border-style: double;
+ 
+}
