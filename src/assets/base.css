@@ -72,3 +72,19 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+h1 {
+  color: aquamarine;
+  text-align: center;
+}
+
+.DV{
+  width: 100px;
+  height: 120px;
+}
+
+H2{
+  border-radius: 20px;
+  background-color: cadetblue;
+  text-align: center;
+}
