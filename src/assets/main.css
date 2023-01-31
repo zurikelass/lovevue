@@ -33,3 +33,25 @@ a,
     padding: 0 2rem;
   }
 }
+
+#slct1 {
+  border-radius: 10px;
+  background-color: violet;
+  height: 39px;
+  width: 108px
+}
+#slct2{
+  border-radius: 10px;
+  background-color:hsla(160, 100%, 37%, 1);
+  height: 39px;
+  width: 108px
+}
+#pg{
+  display: block;
+   margin: 0 auto;
+   text-align: center;
+   position: absolute;
+   bottom: -35px;
+   width: 50%;
+   
+}

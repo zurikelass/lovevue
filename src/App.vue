@@ -6,6 +6,7 @@ export default {
     return {
       range: [5, 10, 15, 50],
       limit: 5,
+      languages:['en', 'ge','it',],
       lang: 'ge',
       apiUrl: 'http://items.magischer.de/api/products',
       products: [],
@@ -41,7 +42,11 @@ export default {
       this.limit = e.target.value
       this.getDataFromApiUrl()
     },
-
+    langChange(e) {
+      this.lang = e.target.value
+      this.getDataFromApiUrl()
+    },
+    
   },
   mounted() {
     this.getDataFromApiUrl()
@@ -50,9 +55,13 @@ export default {
 </script>
 
 <template>
-  <select @change="limitChange">
+  <select id="slct1" @change="limitChange">
     <option v-for="amount in range" :key="amount.index" :value="amount">Per page: {{ amount }}</option>
   </select>
+  <select id="slct2" style="height: 39px;
+width: 108px;" @change="langChange">
+<option v-for="language in languages" :key="language.index" :value="language">Language: {{ language }}</option>
+</select>
   <table class="table-auto" style="margin: 5px;">
     <thead>
       <tr>
@@ -62,7 +71,7 @@ export default {
       </tr>
     </thead>
     <tbody>
-      <tr v-for="item in res.data" :key="item.index">
+      <tr v-for="item in res?.data" :key="item.index">
         <td>{{ item.id }}</td>
         <td>{{ item.name }} </td>
         <td>
@@ -71,7 +80,7 @@ export default {
       </tr>
     </tbody>
   </table>
-  <div>
+  <div id="pg">
     <a href="#" :disabled="!res?.first_page_url" @click.prevent="firstPage">First page</a>
     <button :disabled="!res?.prev_page_url" @click.prevent="prevPage">Previous</button>
     <button :disabled="!res?.next_page_url" @click.prevent="nextPage">Next</button>
