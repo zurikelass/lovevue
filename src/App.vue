@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
 import axios from 'axios'
 
 export default {
@@ -86,4 +86,8 @@ width: 108px;" @change="langChange">
     <button :disabled="!res?.next_page_url" @click.prevent="nextPage">Next</button>
     <a href="#" :disabled="!res?.last_page_url" @click.prevent="lastPage">Last Page</a>
   </div>
-</template>
+</template> -->
+
+
+
+
