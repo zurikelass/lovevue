@@ -1,4 +1,4 @@
-<!-- <script>
+ <!-- <script>
 import axios from 'axios'
 
 export default {
@@ -89,5 +89,47 @@ width: 108px;" @change="langChange">
 </template> -->
 
 
+
+
+<script setup>
+import myProduct from './components/useProducts'
+
+const [limitChange, getProducts, langChange, limit, products, lang, languages,meta, range,] = myProduct ()
+
+</script>
+
+<template>
+  <select id="slct1" @change="limitChange">
+    <option v-for="amount in range" :key="amount.index" :value="amount">Per page: {{ amount }}</option>
+  </select>
+  <select id="slct2" style="height: 39px;
+width: 108px;" @change="langChange">
+<option v-for="language in languages" :key="language.index" :value="language">Language: {{ language }}</option>
+</select>
+  <table class="table-auto" style="margin: 5px;">
+    <thead>
+      <tr>
+        <th>Product Id</th>
+        <th>Product Name</th>
+        <th>Cover Image</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="item in res?.data" :key="item.index">
+        <td>{{ item.id }}</td>
+        <td>{{ item.name }} </td>
+        <td>
+          <img style="width: 80px; height: auto;" :src="item.img.cover" />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div id="pg">
+    <a href="#" :disabled="!res?.first_page_url" @click.prevent="firstPage">First page</a>
+    <button :disabled="!res?.prev_page_url" @click.prevent="prevPage">Previous</button>
+    <button :disabled="!res?.next_page_url" @click.prevent="nextPage">Next</button>
+    <a href="#" :disabled="!res?.last_page_url" @click.prevent="lastPage">Last Page</a>
+  </div>
+</template>
 
 
